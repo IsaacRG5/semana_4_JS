@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestor de Productos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <div class="app">
+ 
+    <header>
+      <h1>gestor<span>.productos</span></h1>
+      <p>Agrega, edita y elimina productos. Sincroniza con la API cuando quieras.</p>
+    </header>
+ 
+    <!-- TASK 2 - Formulario de captura de datos -->
+    <section class="formulario">
+      <h2>// nuevo producto</h2>
+ 
+      <div class="campo">
+        <label for="inputNombre">Nombre</label>
+        <input type="text" id="inputNombre" placeholder="Ej: Laptop Pro" />
+      </div>
+ 
+      <div class="campo">
+        <label for="inputPrecio">Precio (USD)</label>
+        <input type="number" id="inputPrecio" placeholder="Ej: 999" min="0" />
+      </div>
+ 
+      <div class="campo">
+        <label for="inputDesc">Descripción</label>
+        <input type="text" id="inputDesc" placeholder="Ej: Laptop de alto rendimiento" />
+      </div>
+ 
+      <div class="botones-form">
+        <button id="btnAgregar">+ Agregar</button>
+        <button id="btnSincronizar" class="secundario">⟳ Sincronizar API</button>
+      </div>
+ 
+      <!-- Mensaje de éxito / error -->
+      <p id="mensaje"></p>
+    </section>
+ 
+    <!-- TASK 3 - Lista de productos en el DOM -->
+    <section class="lista-section">
+      <h2>// productos <span id="contadorBadge">0</span></h2>
+      <ul id="listaProductos"></ul>
+    </section>
+ 
+  </div>
+ 
+  <!-- Modal de edición (TASK 5 - PUT) -->
+  <div id="modalOverlay" class="modal-overlay oculto">
+    <div class="modal">
+      <h3>// editar producto</h3>
+      <div class="campo">
+        <label>Nombre</label>
+        <input type="text" id="editNombre" />
+      </div>
+      <div class="campo">
+        <label>Precio</label>
+        <input type="number" id="editPrecio" min="0" />
+      </div>
+      <div class="campo">
+        <label>Descripción</label>
+        <input type="text" id="editDesc" />
+      </div>
+      <div class="botones-form">
+        <button id="btnGuardarEdit">Guardar</button>
+        <button id="btnCancelarEdit" class="secundario">Cancelar</button>
+      </div>
+    </div>
+  </div>
+ 
+  <script src="app.js"></script>
+</body>
+</html>
+ 
